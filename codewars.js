@@ -57,3 +57,14 @@ function countBy(x, n) {
 
 countBy(1, 5);  // [1, 2, 3, 4, 5]
 countBy(2, 5);  // [2, 4, 6, 8, 10]
+
+//In this simple assignment you are given a number and have to make it negative. 
+//But maybe the number is already negative?
+
+function makeNegative(num) {
+  if(Math.sign(num) === 1){
+     return num*-1
+ }else{
+    return num
+  }
+ }
