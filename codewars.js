@@ -68,3 +68,16 @@ function makeNegative(num) {
     return num
   }
  }
+
+ //Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+
+ function doubleChar(str) {
+    
+  return [...str].map(letter => letter.repeat(2)).join('')
+  //[...str] turns into array (...is necessary)
+  //map cycles through each letter
+  //'.repeat' doubles each letter on each cycle
+  //'.join' joins/concatinates each letter to the next making it a new string
+
+   
+  }
