@@ -48,7 +48,7 @@ function check(a, x) {
 //countBy(2,5) === [2,4,6,8,10]
 
 function countBy(x, n) {
-  let result = [];
+  let result = []; //[] make it into an array
   for (let i = 1; i <= n; i++) {
     result.push(x * i);
   }
@@ -62,7 +62,7 @@ countBy(2, 5);  // [2, 4, 6, 8, 10]
 //But maybe the number is already negative?
 
 function makeNegative(num) {
-  if(Math.sign(num) === 1){
+  if(Math.sign(num) === 1){ //Math.sign chacks the sign of the numer being passed thorugh it
      return num*-1
  }else{
     return num
@@ -81,3 +81,17 @@ function makeNegative(num) {
 
    
   }
+
+//Write a function which calculates the average of the numbers in a given list.
+
+//Note: Empty arrays should return 0.
+
+function find_average(array) {
+  let sum = 0 
+  
+  for(i=0; i < array.length; i++){
+    sum += array[i]
+  }
+  
+  return sum/array.length;
+}
