@@ -93,5 +93,10 @@ function find_average(array) {
     sum += array[i]
   }
   
-  return sum/array.length;
+  if(sum === 0){
+        return sum
+    }else{
+        return sum/array.length
+    }   
+ 
 }
