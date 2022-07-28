@@ -152,3 +152,9 @@ function digitize(n) {
   let arrOfNum = newArray.map(n => Number(n))
   return arrOfNum.reverse()
 }
+
+//Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+function removeExclamationMarks(s) {
+  let removeIt = s.replace('!','')
+  return removeIt;
+}
