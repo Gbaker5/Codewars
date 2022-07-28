@@ -155,6 +155,6 @@ function digitize(n) {
 
 //Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
 function removeExclamationMarks(s) {
-  let removeIt = s.replace('!','')
+  let removeIt = s.replace(/\!/g, '')
   return removeIt;
 }
