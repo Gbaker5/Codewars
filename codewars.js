@@ -208,3 +208,14 @@ function filter_list(l) {
   return l.filter( element => typeof element === "number") //typeof checks the type of element passed through in this case numbers but can check for strings, booleans and undefined
 
 }
+
+//Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+//Examples:
+
+//solution('abc', 'bc') // returns true
+//solution('abc', 'd') // returns false
+
+function solution(str, ending){
+  return str.endsWith(ending)
+}
