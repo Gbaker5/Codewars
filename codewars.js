@@ -236,3 +236,55 @@ function booleanToString(b){
     return "true";
     }else return "false"
 }
+
+//Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+
+//Examples:
+
+//a = "xyaabbbccccdefww"
+//b = "xxxxyyyyabklmopq"
+//longest(a, b) -> "abcdefklmopqwxy"
+
+//a = "abcdefghijklmnopqrstuvwxyz"
+//longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+
+//other way
+function longest(s1, s2) {
+  let a = [... new Set(s1.split(""))] //turn a into an array and set to remove duplicates (unique array)
+  let b = [... new Set(s2.split(""))] //turn b into an array and set to remove duplicates (unique array)
+  console.log(a)
+  console.log(b)
+
+  for(let i=0; i<b.length; i++){   //join the arrays by pushing "b" onto "a" and running a for loop through "b"
+   a.push(b[i])
+   console.log(a)
+  }
+   let firstCombo = [...new Set(a)] //create a new array from "a" and apply set again
+   console.log(firstCombo)
+   let newCombo = firstCombo.sort().join("") //turn array back into string
+   console.log(newCombo)
+  
+ }
+
+ longest("aaafg","bbbbbzzzzrrrr")
+
+//my way  
+ function longest2(s1,s2){
+   let combined = s1+s2 //combine first string and second string
+   console.log(combined)
+   
+   let array = Array.from(combined) //make an array from combined string
+   console.log(array)
+   
+   let sorted = array.sort() //sort array
+   console.log(sorted)
+   
+   setValue = [...new Set(sorted)] //set array to remove duplicates
+   console.log(setValue)
+  
+   let newString = setValue.join('').toString() //turn array back into a string
+   console.log(newString)  
+   return newString 
+ }
+
+ longest2("aaafg","bbbbbzzzzrrrr")
