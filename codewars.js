@@ -288,3 +288,25 @@ function longest(s1, s2) {
  }
 
  longest2("aaafg","bbbbbzzzzrrrr")
+
+ //Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+//For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+
+//Note: The function accepts an integer and returns an integer
+
+function squareDigits(num){
+    
+  let turnToNum = number => Number(number) //this function turn put string into numbers
+  
+  let numArray = Array.from(String(num), turnToNum) //pass num into string to convert to string then pass function into second parameter to convert back to numbers
+  console.log(numArray)
+  
+  let squaredMaybe = numArray.map(number => number*number)//take the array and iterate through it with a function that squares each number, makes a new array
+  console.log(squaredMaybe)
+
+  let valfromArray = squaredMaybe.join('')//join squared values
+  console.log(Number(valfromArray))
+ 
+ 
+}
