@@ -336,3 +336,17 @@ function removeChar(str){
   
   
   };
+
+  //Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+
+//[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+function grow(x){
+  let n = x.length
+
+  let result = 1;
+  for (let i = 0; i < n; i++)
+      result = result * x[i];
+ return result;
+
+}
+
