@@ -452,3 +452,25 @@ const areaOrPerimeter = function(l , w) {
    return(0)
  }else return(sum)
 }
+
+//Return the number (count) of vowels in the given string.
+
+//We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+//The input string will only consist of lower case letters and/or spaces.
+
+function getCount(str) {
+  let letters = str.toString().split("")
+console.log(letters)
+
+let vowels = letters.filter((letter) => {
+  if(letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u")
+      return(letter)
+  
+  })
+  console.log(vowels)
+  let length = vowels.length
+  console.log(length)
+}
+
+getCount('pear tree')
