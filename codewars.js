@@ -606,3 +606,28 @@ function alphabetPosition(text) {
     return result.slice(0, result.length - 1);
   }
   console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+
+  
+//finding how many times a number occurs, there will always be one mumber that occures an odd amlunt of times
+
+
+
+  function findOdd(numbers) {
+    var count = 0; 
+    
+    for(var i = 0; i<numbers.length; i++){  
+      
+      for(var j = 0; j<numbers.length; j++){
+        
+       
+        if(numbers[i] == numbers[j]){
+          count++;
+          
+        }
+      }
+      if(count % 2 != 0 ){
+        
+        return numbers[i];
+      }
+    }
+  };
