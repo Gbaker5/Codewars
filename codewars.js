@@ -607,7 +607,7 @@ function alphabetPosition(text) {
   }
   console.log(alphabetPosition("The sunset sets at twelve o' clock."));
 
-  
+
 //finding how many times a number occurs, there will always be one mumber that occures an odd amlunt of times
 
 
@@ -631,3 +631,18 @@ function alphabetPosition(text) {
       }
     }
   };
+
+  //Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+
+//It should remove all values from list a, which are present in list b keeping their order.
+
+function arrayDiff(a, b) {
+  
+  if(a.length === 0 || b.length === 0){
+    return a
+  }else{
+    return a.filter(num => !(b.includes(num)))
+    
+  }
+
+  }
