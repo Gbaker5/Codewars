@@ -802,3 +802,29 @@ function past(h, m, s){
 }
 
 //1min =60000ms
+
+
+//Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+
+//Don't change the order of the elements that are left.
+
+function removeSmallest(numbers) {
+  let smallest = Math.min(...numbers)
+  let index = numbers.indexOf(smallest)
+  let front = numbers.slice(0,index)
+  let back = numbers.slice(index+1, numbers.length)
+  let newArray = front.concat(back)
+
+  console.log(numbers)
+  console.log(`the smallest number is => ${smallest}`)
+  console.log(`the index of the first smallest number is => ${index}`)
+  console.log(front)
+  console.log(back)
+  console.log(newArray)
+  
+  if(numbers == []){
+    return []
+  }else return newArray
+
+  
+}
