@@ -854,3 +854,14 @@ function sortArray(array) {
   const odd = array.filter((x) => x % 2).sort((a,b) => a - b);
   return array.map((x) => x % 2 ? odd.shift() : x);
 }
+
+//Write a function that checks if a given string (case insensitive) is a palindrome.
+
+function isPalindrome(x) {
+  
+  let revArr = Array.from(x.toLowerCase()).reverse()
+  let rev = revArr.join('')
+  if(x.toLowerCase() === rev){
+    return true
+  }else return false
+}
