@@ -865,3 +865,44 @@ function isPalindrome(x) {
     return true
   }else return false
 }
+
+//There is an array with some numbers. All numbers are equal except for one. Try to find it!
+
+//findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+//findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+//It’s guaranteed that array contains at least 3 numbers.
+
+//The tests contain some very huge arrays, so think about performance.
+
+var array1 = [1,2,1,3,5,2,3];
+var array2 = [1,2,1,3,5,5,3];
+
+function findUnique(array){
+
+  return array.find(
+    // The code below runs for every element of the array.
+    //    - for each element, it takes the element and checks if first position, is the same as last position in the array
+    //for example in array1- [1] would have indexof(0) and lastindexof(2) but [5] would have indexof(4) and lastindexof(4)
+    (item) => array.indexOf(item) === array.lastIndexOf(item) //
+  );
+}
+
+console.log("For array 1, unique item is: ",findUnique(array1));
+console.log("For array 2, unique item is: ",findUnique(array2));
+
+//Write a function that takes an array of numbers (integers for the tests) and a target number. It should find two different items in the array that, when added together, give the target value. The indices of these items should then be returned in a tuple / list (depending on your language) like so: (index1, index2).
+
+function twoSum(numbers, target) {
+  
+  indexes = [];
+ 
+  for(i=0;i<numbers.length;i++){
+  for(j=i+1;j<numbers.length;j++){
+    if(numbers[i] + numbers[j] === target){
+      indexes.push(i);
+      indexes.push(j)
+    }
+  }
+}
+return indexes
+}
