@@ -904,5 +904,5 @@ function twoSum(numbers, target) {
     }
   }
 }
-return indexes
+return indexes[0], indexes[1]
 }
