@@ -906,3 +906,28 @@ function twoSum(numbers, target) {
 }
 return indexes[0], indexes[1]
 }
+
+
+
+function disemvowel(str) {
+
+  console.log(str)
+  arr = str.split('')
+  console.log(arr)
+  let noa = arr.filter(letter=> letter !== 'a')
+  let noA = noa.filter(letter=> letter !== 'A')
+  let noe = noA.filter(letter=> letter !== 'e')
+  let noE = noe.filter(letter=> letter !== 'E')
+  let noi = noE.filter(letter=> letter !== 'i')
+  let noI = noi.filter(letter=> letter !== 'I')
+  let noo = noI.filter(letter=> letter !== 'o')
+  let noO = noo.filter(letter=> letter !== 'O')
+  let nou = noO.filter(letter=> letter !== 'u')
+  let noU = nou.filter(letter=> letter !== 'U')
+
+  console.log(noU.join(''))
+
+
+}
+
+disemvowel('This phrAse has no vowels')
