@@ -1072,3 +1072,19 @@ binaryArrayToNumber([1,0,1,1,1])
 const binaryArrayToNumber2 = arr => {
   return parseInt(arr.join(""), 2)
 };
+
+//You will be given a list of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+
+//The returned value must be a string, and have "***" between each of its letters.
+
+//You should not remove or add elements from/to the array.
+
+function twoSort(s) {
+  let sorted = s.sort()
+  console.log(sorted)
+  let first = sorted[0]
+  console.log(first)
+  console.log(first.split('').join('***'))
+  }
+
+  twoSort(['baker', 'Baker', 'maybe', 'who', 'Knows'])
