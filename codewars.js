@@ -1066,3 +1066,9 @@ const binaryArrayToNumber = arr => {
 };
 
 binaryArrayToNumber([1,0,1,1,1])
+
+//or
+
+const binaryArrayToNumber2 = arr => {
+  return parseInt(arr.join(""), 2)
+};
