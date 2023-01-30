@@ -1280,3 +1280,47 @@ function fakeBin(x){
   
   }
   fakeBin('45385593107843568')
+
+  //Simple, remove the spaces from the string, then return the resultant string.
+
+  function noSpace(x){
+    idk = x.split('')
+    console.log(idk)
+    let newStr = '';
+    for(i=0;i<idk.length;i++){
+      if(idk[i] !== " "){
+        newStr += idk[i]
+      }
+    }
+    console.log(newStr)
+    }
+    
+    noSpace('8 j 8   mBliB8g  imjB8B8  jl  B')
+
+//Given a list of integers, determine whether the sum of its elements is odd or even.
+
+//Give your answer as a string matching "odd" or "even".
+
+//If the input array is empty consider it as: [0] (array with a zero).
+
+//Examples:
+
+//Input: [0]
+//Output: "even"
+
+//Input: [0, 1, 4]
+//Output: "odd"
+
+//Input: [0, -1, -5]
+//Output: "even"
+
+function oddOrEven(array) {
+  initialVal =0;
+ let myTotal = array.reduce((acc, total) => acc + total, initialVal)
+ console.log(myTotal)
+ if(myTotal %2 == 0){
+  console.log('even')
+ }else console.log('odd')
+}
+
+oddOrEven([])
