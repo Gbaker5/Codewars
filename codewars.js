@@ -1415,3 +1415,39 @@ function betterThanAverage(classPoints, yourPoints) {
 function smash (words) {
   return words.join(' ')
 };
+
+//As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+
+//The input to the function will be an array of three distinct numbers (Haskell: a tuple).
+
+//For example:
+
+//gimme([2, 3, 1]) => 0
+//2 is the number that fits between 1 and 3 and the index of 2 in the input array is 0.
+
+//Another example (just to make sure it is clear):
+
+//gimme([5, 10, 14]) => 1
+//10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
+
+
+
+function gimme (triplet) {
+  console.log(triplet)
+  
+  let triplet2 = [];
+  for(i=0;i<triplet.length;i++){
+    triplet2.push(triplet[i])
+  }
+  //console.log(triplet2)
+  let sorted = triplet2.sort((a,b) => (a - b))
+  console.log(sorted)
+  
+  let middleNum = sorted[1]
+  console.log(middleNum)
+  
+  let index = triplet.indexOf(middleNum)
+  console.log(index)
+  }
+  
+  gimme([2, 3, 1])
