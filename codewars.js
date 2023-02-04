@@ -1507,3 +1507,30 @@ function findMultiples(integer, limit) {
   }
   console.log(arr)
 }
+
+//Create a function called shortcut to remove the lowercase vowels (a, e, i, o, u ) in a given string.
+
+//Examples
+
+//"hello"     -->  "hll"
+//"codewars"  -->  "cdwrs"
+//"goodbye"   -->  "gdby"
+//"HELLO"     -->  "HELLO"
+//don't worry about uppercase vowels
+//y is not considered a vowel for this kata
+
+//const str = 'coding beauty';
+//const noVowels = str.replace(/[aeiou]/gi, '');
+//console.log(noVowels); // cdng bty
+//We use the two forward slashes (/ /) to specify the start and end of the regular expression.
+//The [] characters are used to specify a pattern that matches any of a specific group of characters. For example, the pattern [abc] will match 'a', 'b', or 'c'. In the same way, the [aeiou] pattern will match any of the 5 vowel characters in the English alphabet.
+//The g (global) regex flag is used to match all occurrences of the regex pattern. Without this flag, only the first pattern match would be removed after calling replace().
+//The i (ignore case) flag is used to perform a case-insensitive search for a regex match in the given string. This ensures that all vowels are removed from the string whether they are uppercased or not.
+function shortcut (string) {
+  console.log(string)
+  
+  let noVowel = string.replace(/[aeiou]/g, '')
+  console.log(noVowel)
+}
+
+shortcut("cheese")
