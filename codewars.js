@@ -1700,3 +1700,36 @@ function highAndLow(numbers){
 }
 
 highAndLow("3 5 -6 9 7")
+
+//Character recognition software is widely used to digitise printed texts. Thus the texts can be edited, searched and stored on a computer.
+
+//When documents (especially pretty old ones written with a typewriter), are digitised character recognition softwares often make mistakes.
+
+//Your task is correct the errors in the digitised text. You only have to handle the following mistakes:
+
+//S is misinterpreted as 5
+//O is misinterpreted as 0
+//I is misinterpreted as 1
+//The test cases contain numbers only by mistake.
+
+function correct(string){
+  arr = string.split('')
+  console.log(arr)
+  newArr1 = []
+  newArr2 = []
+  newArr3 = []
+  for(i=0;i<arr.length;i++){
+      console.log(arr[i])
+      //replace number with letter
+      
+      newArr1.push(arr[i].replace("0", "O"))
+      newArr2.push(newArr1[i].replace("1", "I"))
+      newArr3.push(newArr2[i].replace("5", "S"))
+      
+      
+
+  }
+  console.log(newArr3.join(''))
+}
+
+correct("L0ND1N5")
