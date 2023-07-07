@@ -1774,3 +1774,47 @@ for(k=1;k<newArr.length;k++){
 }
 
 titleCase('THE WIND IN THE WILLOWS', 'the in')
+
+
+//You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+
+function getMiddle(s){
+
+  arr = s.split("")
+  console.log(arr)
+  num = arr.length
+  console.log(num)
+
+ 
+    if(num%2 == 0){
+      number1even = (num/2) - 1
+      number2even = (num/2)
+      console.log(number1even)
+      console.log(number2even)
+      lettersEven = arr[number1even]+arr[number2even]
+      console.log(lettersEven)
+      console.log("even")
+    }  
+    else{
+      numberOdd = (num/2) - 0.5
+      console.log(numberOdd)
+      letterodd = arr[numberOdd]
+      console.log(letterodd)
+      console.log("odd")
+    }
+  }
+
+  
+
+//number = (s / 2) + .5 //conversion for odd
+//numberTwo = (s/2)//conversion for even
+//numberThree = (s/2) + 1//conversion for even
+
+//console.log(number)
+//console.log(numberTwo)
+//console.log(numberThree)
+
+
+
+getMiddle("test")
