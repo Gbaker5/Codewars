@@ -1887,3 +1887,50 @@ var countSheep = function (num){
   console.log(phrase)
 }
 countSheep(3)
+
+//Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+
+//Example
+
+//Test.assertSimilar( capitals('CodEWaRs'), [0,3,4,6] );
+
+var capitals = function (word) {
+	arr = word.split("")
+    console.log(arr)
+    newArr = []
+    for(i=0;i<arr.length;i++){
+        if(arr[i] == arr[i].toUpperCase()){
+            newArr.push(i)
+        }
+    }
+    console.log(newArr)
+};
+
+capitals('CodEWaRs')
+
+//In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". Your function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+
+//More similar exercise are found here: http://rosalind.info/problems/list-view/ (source)
+
+//Example: (input --> output)
+
+//"ATTGC" --> "TAACG"
+//"GTAT" --> "CATA"
+
+
+function DNAStrand(dna){
+  let arr = dna.split("")
+  let dnaArr = []
+  for(let i=0;i<arr.length;i++){
+    if(arr[i] == "A" ){
+      dnaArr.push("T")
+    }else if(arr[i] == "T"){
+      dnaArr.push("A")
+    }else if(arr[i] == "C"){
+      dnaArr.push("G")
+    }else if(arr[i] == "G"){
+      dnaArr.push("C")
+    }
+  }
+  return dnaArr.join("")
+}
