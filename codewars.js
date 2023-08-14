@@ -2062,9 +2062,33 @@ function switchItUp(number){
 function wave(str){
   // Code here
   arr= str.split("")
+  let newWords = [];
   for(i=0;i<arr.length;i++){
+    newWords.push(str.substring(0,[i]) + arr[i].toUpperCase() + str.substring([i+1]))
      console.log(str.substring(0,[i]) + arr[i].toUpperCase() + str.substring([i+1])) 
   }
+  console.log(newWords)
 }
 
 wave("hello")
+
+
+//The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+
+//What if the string is empty? Then the result should be empty object literal, {}.
+
+function count(string) {
+  array = string.split('')
+  console.log(array)
+  const count = {};
+  array.forEach(letter => {
+      if(count[letter]){
+          count[letter] += 1;
+      }else {
+          count[letter] = 1;
+      }
+  })
+  console.log(count)
+}
+
+count('aba')
