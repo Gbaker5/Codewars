@@ -2166,8 +2166,14 @@ function quotable(name, quote){
 
 function toUnderscore(string) {
   console.log(string)
-  arr = string.split(/\.?(?=[A-Z])/g).join('_')
+  arr = string.split(/\.?(?=[A-Z])/g).join('_').toLowerCase()
   console.log(arr)
 }
 
 toUnderscore("TestController7Champ")
+
+//Create a method that accepts a list and an item, and returns true if the item belongs to the list, otherwise false.
+
+function include(arr, item){
+  return arr.includes(item)? true:false
+ }
