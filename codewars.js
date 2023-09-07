@@ -2177,3 +2177,30 @@ toUnderscore("TestController7Champ")
 function include(arr, item){
   return arr.includes(item)? true:false
  }
+
+ //Given a varying number of integer arguments, return the digits that are not present in any of them.
+
+//Example:
+
+//[12, 34, 56, 78]  =>  "09"
+//[2015, 8, 26]     =>  "3479"
+//Note: the digits in the resulting string should be sorted.
+
+
+ function unusedDigits(...arr) {
+  const array2 = [0,1,2,3,4,5,6,7,8,9]
+  console.log(array2)
+  console.log(arr)
+  digits = arr.join('').split('').sort()
+  console.log(digits)
+ const  numberArr = digits.map(digit => Number(digit))
+  console.log(numberArr)
+
+
+  const filtered = array2.filter((number) => !numberArr.includes(number))
+
+  //filtered = (number(/[0-9]/g))
+  console.log(filtered.join(''))
+}
+
+unusedDigits(12, 34, 56, 78)
