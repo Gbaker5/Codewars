@@ -2204,3 +2204,13 @@ function include(arr, item){
 }
 
 unusedDigits(12, 34, 56, 78)
+
+function sortByLength (array) {
+  // Return an array containing the same strings, ordered from shortest to longest
+  let fry= array.sort((a,b) => a.length - b.length)
+  console.log(fry)
+
+  
+};
+
+sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"])
