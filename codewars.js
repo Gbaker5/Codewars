@@ -2312,3 +2312,26 @@ const rps = (p1, p2) => {
     return 'Player 1 won!'
     }else return 'Draw!'
 };
+
+//Numbers ending with zeros are boring.
+
+//They might be fun in your world, but not here.
+
+//Get rid of them. Only the ending ones.
+
+//1450 -> 145
+//960000 -> 96
+//1050 -> 105
+//-1050 -> -105
+
+function noBoringZeros(n) {
+  let reverse = n.toString().split('').reverse()
+  console.log(reverse)
+  while(reverse[0] == "0"){
+      reverse.shift()
+  }
+   let normal = Number(reverse.reverse().join(''))
+   console.log(normal)
+}
+
+noBoringZeros(-10500000)
