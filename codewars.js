@@ -2350,3 +2350,64 @@ function greet (name, owner) {
       return 'Hello boss'
   }else return 'Hello guest'
 }
+
+//Given an integer as input, can you round it to the next (meaning, "greater than or equal") multiple of 5?
+
+//Examples:
+
+//input:    output:
+//0    ->   0
+//2    ->   5
+//3    ->   5
+//12   ->   15
+//21   ->   25
+//30   ->   30
+//-2   ->   0
+//-5   ->   -5
+//etc.
+
+function roundToNext5(n){
+  return Math.ceil(n / 5) * 5;
+}
+
+//I have a cat and a dog.
+
+//I got them at the same time as kitten/puppy. That was humanYears years ago.
+
+//Return their respective ages now as [humanYears,catYears,dogYears]
+
+//NOTES:
+
+//humanYears >= 1
+//humanYears are whole numbers only
+//Cat Years
+
+//15 cat years for first year
+//+9 cat years for second year
+//+4 cat years for each year after that
+//Dog Years
+
+//15 dog years for first year
+//+9 dog years for second year
+//+5 dog years for each year after that
+
+
+
+var humanYearsCatYearsDogYears = function(humanYears) {
+    
+  if(humanYears == 1){
+      let cat = 15
+      let dog = 15
+      console.log([humanYears,cat,dog])
+  }else if(humanYears == 2){
+      let cat = 24;
+      let dog = 24
+      console.log([humanYears,cat,dog])
+  }else if(humanYears >2){
+      let leftover = humanYears -2
+      let cat = 24 + (4* leftover);
+      let dog = 24 + (5* leftover)
+      console.log([humanYears,cat,dog])
+  }
+  
+}
