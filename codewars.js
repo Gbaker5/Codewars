@@ -2515,3 +2515,16 @@ function distinct(a) {
 }
 
 distinct([1, 2, 1, 1, 3, 2])
+
+//Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+//Return your answer as a number.
+
+function sumMix(x){
+  const toDigits = x.map(dig => Number(dig))
+   console.log(toDigits)
+   const sum = toDigits.reduce((acc,c) => acc + c)
+   console.log(sum)
+ }
+
+ sumMix([9, 3, '7', '3'])
