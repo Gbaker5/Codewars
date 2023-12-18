@@ -2579,3 +2579,17 @@ function reverse(string){
 }
 
 reverse('I am an expert at this')
+
+//Build a function that returns an array of integers from n to 1 where n>0.
+
+//Example : n=5 --> [5,4,3,2,1]
+
+const reverseSeq = n => {
+  const arry = [];
+  for(i=1;i<n+1;i++){
+    arry.push(i)
+  }
+  console.log(arry)
+};
+
+reverseSeq(5)
