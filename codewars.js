@@ -2560,3 +2560,22 @@ function minValue(values){
 }
 
 minValue([4, 8, 1, 4])
+
+//You need to write a function that reverses the words in a given string. A word can also fit an empty string. If this is not clear enough, here are some examples:
+
+//As the input may have trailing spaces, you will also need to ignore unneccesary whitespace.
+
+//Example (Input --> Output)
+
+//"Hello World" --> "World Hello"
+//"Hi There." --> "There. Hi"
+
+function reverse(string){
+  //your code here
+  const arr = string.split(" ")
+  const backwards =  arr.reverse()
+  console.log(backwards)
+  console.log(backwards.join(" ")) 
+}
+
+reverse('I am an expert at this')
