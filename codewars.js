@@ -2664,3 +2664,35 @@ function warnTheSheep(queue) {
 }
 
 warnTheSheep(["sheep", "sheep", "sheep", "sheep", "sheep", "sheep", "wolf"])
+
+//Welcome.
+
+//In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+//If anything in the text isn't a letter, ignore it and don't return it.
+
+//"a" = 1, "b" = 2, etc.
+
+//Example
+
+//alphabetPosition("The sunset sets at twelve o' clock.")
+//Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" ( as a string )
+
+function alphabetPosition(text) {
+  console.log(text)
+
+  const array = text.toLowerCase().split("") 
+  console.log(array)
+  
+  const allLetters = array.filter(letter => /[a-z]/.test(letter))
+  console.log(allLetters)
+  
+
+  alphabet = "0,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z".split(",")
+  console.log(alphabet)
+
+  const translate = allLetters.map( letter => alphabet.indexOf(letter))
+  console.log(translate)
+}
+
+alphabetPosition("The sunset sets at twelve o' clock.")
