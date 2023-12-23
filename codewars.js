@@ -2593,3 +2593,74 @@ const reverseSeq = n => {
 };
 
 reverseSeq(5)
+
+//Your goal is to return multiplication table for number that is always an integer from 1 to 10.
+
+//For example, a multiplication table (string) for number == 5 looks like below:
+
+//1 * 5 = 5
+//2 * 5 = 10
+//3 * 5 = 15
+//4 * 5 = 20
+//5 * 5 = 25
+//6 * 5 = 30
+//7 * 5 = 35
+//8 * 5 = 40
+//9 * 5 = 45
+//10 * 5 = 50
+//P. S. You can use \n in string to jump to the next line.
+
+//Note: newlines should be added between rows, but there should be no trailing newline at the end. If you're unsure about the format, look at the sample tests.
+
+function multiTable(number) {
+  const array = [];
+  
+  for(i=1;i<11;i++){
+    
+    array.push(`${i} * ${number} = ${i*number}`)
+    
+  }
+
+  console.log(array.join("\n"))
+  // good luck
+}
+
+multiTable(6)
+
+
+//Wolves have been reintroduced to Great Britain. You are a sheep farmer, and are now plagued by wolves which pretend to be sheep. Fortunately, you are good at spotting them.
+
+//Warn the sheep in front of the wolf that it is about to be eaten. Remember that you are standing at the front of the queue which is at the end of the array:
+
+//[sheep, sheep, sheep, sheep, sheep, wolf, sheep, sheep]      (YOU ARE HERE AT THE FRONT OF THE QUEUE)
+   //7      6      5      4      3            2      1
+//If the wolf is the closest animal to you, return "Pls go away and stop eating my sheep". Otherwise, return "Oi! Sheep number N! You are about to be eaten by a wolf!" where N is the sheep's position in the queue.
+
+//Note: there will always be exactly one wolf in the array.
+
+//Examples
+
+//Input: ["sheep", "sheep", "sheep", "wolf", "sheep"]
+//Output: "Oi! Sheep number 1! You are about to be eaten by a wolf!"
+
+//Input: ["sheep", "sheep", "wolf"]
+//Output: "Pls go away and stop eating my sheep"
+
+function warnTheSheep(queue) {
+    
+  console.log(queue)
+  const reverseQ = queue.reverse()
+  console.log(reverseQ)
+  const wolf = reverseQ.indexOf("wolf")
+  console.log(wolf)
+  console.log(reverseQ[0])
+  
+ 
+
+
+  if(reverseQ[0] == "wolf"){
+      console.log("Pls go away and stop eating my sheep")
+  }else console.log(`Oi! Sheep number ${(wolf)}! You are about to be eaten by a wolf!`)
+}
+
+warnTheSheep(["sheep", "sheep", "sheep", "sheep", "sheep", "sheep", "wolf"])
