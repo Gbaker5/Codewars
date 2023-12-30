@@ -2721,3 +2721,14 @@ function removeUrlAnchor(url){
   }else return url.slice(0, pound)
   
 }
+
+
+//Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+function evenOrOdd(number) {
+  console.log(number %2)
+  if(number %2 == 0){
+      console.log("even")
+  } else console.log("odd")
+}
+evenOrOdd(-42)
