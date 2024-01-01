@@ -2763,3 +2763,42 @@ function cockroachSpeed(s) {
       return 'Hello,' + ' ' + name[0].toUpperCase()+(name.substring(1)).toLowerCase()+'!'
     }else return "Hello, World!";
   }
+
+
+  //Write Number in Expanded Form
+
+//You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+//expandedForm(12); // Should return '10 + 2'
+//expandedForm(42); // Should return '40 + 2'
+//expandedForm(70304); // Should return '70000 + 300 + 4'
+//NOTE: All numbers will be whole numbers greater than 0.
+
+  function expandedForm(num) {
+
+    
+    const string = num.toString().split(""); //create string array from number
+    const length = string.length;
+    console.log(length)
+
+    const result = []; //empty array
+    
+    for (let i = 0; i < string.length; i++) {
+        const digit = parseInt(string[i], 10); //convert each back to a number
+        //console.log(digit) 
+        console.log(string.length - i - 1)
+
+        if (digit !== 0) { //if digit is not a zero then..
+            const expandedDigit = digit * Math.pow(10, string.length - i - 1); 
+            //take each digit and multiply it by 10 to the multiple of the index of the digit which should be its place in the original number 
+            //7,0,3,0,4 (original num) * (10 to the) 4,3,2,1,0 
+            //(7*10,000) , (3 * 100) , (4 * 1)
+            result.push(expandedDigit); //push nums into empty array
+            //console.log(result)
+        }
+    }
+
+    console.log(result.join(" + "));
+}
+
+expandedForm(70304)
