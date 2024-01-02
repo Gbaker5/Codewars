@@ -2836,3 +2836,24 @@ function validatePIN (pin) {
 }
 
 validatePIN("1234")
+
+//You need to write regex that will validate a password to make sure it meets the following criteria:
+
+//At least six characters long
+//contains a lowercase letter
+//contains an uppercase letter
+//contains a digit
+//only contains alphanumeric characters (note that '_' is not alphanumeric)
+
+
+// assign your RegExp to REGEXP:
+const REGEXP = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/
+//^: Asserts the start of the string.
+//(?=.*[a-z]): Positive lookahead assertion for at least one lowercase letter.
+//(?=.*[A-Z]): Positive lookahead assertion for at least one uppercase letter.
+//(?=.*\d): Positive lookahead assertion for at least one digit.
+//[a-zA-Z\d]{6,}: Matches any combination of at least six alphanumeric characters (letters or digits).
+//$: Asserts the end of the string.
+
+const isValidPassword = REGEXP.test("YourPassword123");
+console.log(isValidPassword); // Output: true or false based on the password
