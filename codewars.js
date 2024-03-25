@@ -3067,3 +3067,22 @@ var findAverage = function (nums) {
 //If an empty value ( null, None, Nothing etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0.
 
 
+function sumArray(array) {
+  if(array == null){
+    return 0
+ 
+  }else if(array.length <3 ){
+    return 0
+  }else{
+    let ordered = array.sort((a,b) => a-b)
+   
+
+    ordered.shift()
+    ordered.pop()
+    
+    let sum = ordered.reduce((acc,c) => acc + c)
+    return sum
+  }
+    
+
+}
