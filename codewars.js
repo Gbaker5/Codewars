@@ -713,7 +713,7 @@ function howMuchILoveYou(nbPetals) {
   
   let choice = []; 
 
-  for(let i = 0; i<nbPetals; i++){ //for loop that terates as many times as the value of nbPetals
+  for(let i = 0; i<nbPetals; i++){ //for loop that iterates as many times as the value of nbPetals
     choice = ( petal[i%6]) //variable holds choice after iterating through the array it will loop back through the same array. (could also be written (petal[i%petal.length]) to express the repeating point in the array)
   }
   console.log(choice)
@@ -3104,3 +3104,20 @@ function findDifference(a, b) {
   
   return Math.max(...cubArr)- Math.min(...cubArr)
 }
+
+
+//ROT13 is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet. ROT13 is an example of the Caesar cipher.
+
+//Create a function that takes a string and returns the string ciphered with Rot13. If there are numbers or special characters included in the string, they should be returned as they are. Only letters from the latin/english alphabet should be shifted, like in the original Rot13 "implementation".
+
+
+function rot13(message){
+  return message.replace(/[a-zA-Z]/g, function(char) { //replace each letter in message with character from function
+      let charCode = char.charCodeAt(0); //iterate through each letter and grab the character code for the index 
+      let offset = charCode <= 90 ? 65 : 97; // A-Z is 65-90, a-z is 97-122, so if the code is less than 90 the index starts @65 otherwise it starts @97 
+      return  String.fromCharCode(((charCode - offset + 13) % 26) + offset); //puts everything into the range of 0-25. since the range of both the uppercase and lowercase is the same (0-25) it adjusts the letter index accordingly without going out of the range of the alphabet and then add the offset to put it back into its respective case range. 
+});
+
+}
+rot13("Test two!") //test = grfg
+
