@@ -3149,14 +3149,49 @@ function howManyLightsabersDoYouOwn(name) {
 //This example will return the string Hello, John Smith! Welcome to Phoenix, Arizona!
 
 
-function sayHello( name, city, state ) {
-  
-  if(name.length > 0 ){
-     name = name.join(" ")
-     console.log(name)
+
+//Your job is to write a function which increments a string, to create a new string.
+//
+//If the string already ends with a number, the number should be incremented by 1.
+//If the string does not end with a number. the number 1 should be appended to the new string.
+//Examples:
+//
+//foo -> foo1
+//
+//foobar23 -> foobar24
+//
+//foo0042 -> foo0043
+//
+//foo9 -> foo10
+//
+//foo099 -> foo100
+//
+//Attention: If the number has leading zeros the amount of digits should be considered.
+
+
+function incrementString(strng) {
+  // Split the string into characters
+  let strngArr = strng.split("");
+  let numberPart = "";
+
+  // Find the number part at the end of the string
+  while (strngArr.length > 0 && strngArr[strngArr.length - 1].match(/[0-9]/)) {
+      numberPart = strngArr.pop() + numberPart;
   }
-   
- console.log(`Hello ${name}!, Welcome to ${city}, ${state}`)
- }
- 
- sayHello(['John', 'Smith'], 'Phoenix', 'Arizona')
+
+  // If no number part found, append '1' and return
+  if (numberPart === "") {
+      return strng + '1';
+  }
+
+  // Increment the number part
+  let incrementedNumber = (parseInt(numberPart) + 1).toString();
+
+  // Adjust the length if necessary to match the original number's length
+  while (incrementedNumber.length < numberPart.length) {
+      incrementedNumber = '0' + incrementedNumber;
+  }
+
+  // Join the string part with the incremented number
+  return strngArr.join("") + incrementedNumber;
+}
