@@ -3195,3 +3195,25 @@ function incrementString(strng) {
   // Join the string part with the incremented number
   return strngArr.join("") + incrementedNumber;
 }
+
+
+function dirReduc(arr) {
+  const opposite = {
+      'NORTH': 'SOUTH',
+      'SOUTH': 'NORTH',
+      'EAST': 'WEST',
+      'WEST': 'EAST'
+  };
+
+  let result = [];
+
+  for (let direction of arr) { //for every direction in the array
+      if (result.length && result[result.length - 1] === opposite[direction]) {
+          result.pop(); // Remove the last element from the result array
+      } else {
+          result.push(direction); // Add the direction to the result array
+      }
+  }
+
+  return result;
+}
