@@ -3196,6 +3196,7 @@ function incrementString(strng) {
   return strngArr.join("") + incrementedNumber;
 }
 
+///////////
 
 function dirReduc(arr) {
   const opposite = {
@@ -3217,3 +3218,50 @@ function dirReduc(arr) {
 
   return result;
 }
+
+
+//The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+//
+//Examples
+//
+//"din"      =>  "((("
+//"recede"   =>  "()()()"
+//"Success"  =>  ")())())"
+//"(( @"     =>  "))((" 
+//Notes
+//
+//Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
+
+function duplicateEncode(word){
+  const arr = word.toLowerCase().split("")
+  console.log(arr)
+
+  let duplicates = []
+
+for(i=0;i<arr.length;i++){
+   
+   for(j=i+1;j<arr.length;j++){
+       if(arr[i] == arr[j] && !duplicates.includes(arr[i])){
+           duplicates.push(arr[i])
+       } 
+   }
+}
+console.log(duplicates)
+
+let newArr = []
+
+for(k=0;k<arr.length;k++){
+   if(duplicates.includes(arr[k])){
+       newArr.push(")")
+   }else newArr.push("(")
+}
+
+console.log(newArr)
+
+console.log(newArr.join(""))
+}
+
+
+//duplicateEncode("recede")
+//duplicateEncode("(( @")
+duplicateEncode("din")
