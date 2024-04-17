@@ -3298,3 +3298,17 @@ calculateAge(2012, 2016)
 calculateAge(1989, 2016)
 calculateAge(3400, 3400)
 calculateAge(2010, 1990)
+
+
+//Write a function to split a string and convert it into an array of words.
+//
+//Examples (Input ==> Output):
+//
+//"Robin Singh" ==> ["Robin", "Singh"]
+//
+//"I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
+
+function stringToArray(string){
+
+  return string.split(" ")
+  }
