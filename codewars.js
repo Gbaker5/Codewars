@@ -3328,3 +3328,25 @@ function camelCase(string){
 }
 
 camelCase('camelCasingIsCool')
+
+
+//Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+//
+//For example:
+//
+//a = 1
+//b = 4
+//--> [1, 2, 3, 4]
+
+
+function between(a, b) {
+  // your code here
+  let countToB = [];
+
+  for(i=a;i<b+1;i++){
+      countToB.push(i)
+  }
+  console.log(countToB)
+}
+
+between(1,4)
