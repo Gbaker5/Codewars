@@ -3473,3 +3473,43 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
 function main (verb, noun){
   return verb + noun
 }
+
+//Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
+//
+//For example, a tower with 3 floors looks like this:
+//
+//[
+//  "  *  ",
+//  " *** ", 
+//  "*****"
+//]
+//And a tower with 6 floors looks like this:
+//
+//[
+//  "     *     ", 
+//  "    ***    ", 
+//  "   *****   ", 
+//  "  *******  ", 
+//  " ********* ", 
+//  "***********"
+//]
+
+function towerBuilder(nFloors) {
+  // build here\
+  
+
+
+  let tower = []
+
+      for(let i=1; i <= 2 * nFloors-1; i+= 2){
+          const spaces = ' '.repeat((2 * nFloors - i -1) / 2);
+          const blocks = '*'.repeat(i);
+          const floor = spaces + blocks + spaces;
+          tower.push(floor);
+      }
+  
+      console.log(tower);
+}
+
+
+towerBuilder(4)
