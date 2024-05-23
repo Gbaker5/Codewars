@@ -3605,3 +3605,23 @@ function basicOp(operation, value1, value2){
 }
 
 basicOp("+", 4, 7)
+
+
+//Complete the function which converts a binary number (given as a string) to a decimal number.
+
+function binToDec(bin) {
+    // TODO
+    const arr = bin.split("").reverse()
+    console.log(arr)
+
+    let equation = [];
+    for(i=0;i<arr.length;i++){
+        equation.push(Math.pow(2,i)* arr[i])
+    }
+    console.log(equation)
+
+    let sum = equation.reduce((acc,c) => acc+ c)
+    console.log(sum)
+  }
+
+  binToDec("1001001")
