@@ -3646,3 +3646,59 @@ function remainder(n, m){
   // Divide the larger argument by the smaller argument and return the remainder
   return Math.max(n,m) % Math.min(n,m)
 }
+
+//Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+//
+//Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+//
+//If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+
+
+
+
+function order(words){
+  if(words == ""){
+    return words
+  }
+  
+  let arr = words.split(" ")
+  console.log(arr)
+
+  newArr = [];
+
+  for(j=1;j<arr.length+1;j++){
+      newArr.push(j)
+  }
+  console.log(newArr)
+
+  for(i=0;i<arr.length;i++){
+      
+      if(arr[i].includes(1)){ //if string includes this number put into arr
+          newArr.splice(0,1, arr[i])
+      }if(arr[i].includes(2)){
+          newArr.splice(1,1, arr[i])
+      }if(arr[i].includes(3)){
+          newArr.splice(2,1, arr[i])
+      }if(arr[i].includes(4)){
+          newArr.splice(3,1, arr[i])
+      }if(arr[i].includes(5)){
+          newArr.splice(4,1, arr[i])
+      }if(arr[i].includes(6)){
+          newArr.splice(5,1, arr[i])
+      }if(arr[i].includes(7)){
+          newArr.splice(6,1, arr[i])
+      }if(arr[i].includes(8)){
+          newArr.splice(7,1, arr[i])
+      }if(arr[i].includes(9)){
+          newArr.splice(8,1, arr[i])
+      }
+  
+  }
+  console.log(newArr)
+
+  
+
+ console.log( newArr.join(" "))
+}
+
+order("4of Fo1r pe6ople g3ood th5e the2")
