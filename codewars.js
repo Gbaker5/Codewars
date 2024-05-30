@@ -3660,7 +3660,7 @@ function order(words){
   if(words == ""){
     return words
   }
-  
+
   let arr = words.split(" ")
   console.log(arr)
 
@@ -3702,3 +3702,51 @@ function order(words){
 }
 
 order("4of Fo1r pe6ople g3ood th5e the2")
+
+//You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+//
+//You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+//
+//Input: l1 = [2,4,3], l2 = [5,6,4]
+//Output: [7,0,8]
+//Explanation: 342 + 465 = 807.
+//Example 2:
+//
+//Input: l1 = [0], l2 = [0]
+//Output: [0]
+//Example 3:
+//
+//Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+//Output: [8,9,9,9,0,0,0,1]
+
+var addTwoNumbers = function(l1,l2){
+  let carry = 0;
+  let previousNode = new ListNode();
+  const headNode = previousNode;
+
+  while(l1 || l2 || carry){  //this makes sure the loop keeps iterating even if theres no element in one list. so as long as there is a value (not null) it will run
+      let val1 = 0;
+      let val2 = 0;
+      if(l1){ //if val1 is not null
+          val1 = l1.val; //val1 becomes the value of the current node in the list. 
+          l1 = l1.next; //if l1 is not null it will update to next link on node
+
+      }if(l2){
+          val2 = l2.val;
+          l2 = l2.next; //if l2 is not null it will update to next link on node
+      }
+      let sum = val1 +val2 + carry;
+      //console.log(`${val1} + ${val2} = ${sum}`)
+      carry = Math.floor(sum/10); // sum >9 ? 1:0
+      const digit = sum % 10;
+      const currentNode = new ListNode(digit);
+      previousNode.next = currentNode;
+      previousNode = currentNode;
+  }
+
+  return headNode.next;
+
+}
+
+addTwoNumbers([3,2,1], [5,4])
+
