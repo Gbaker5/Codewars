@@ -3781,10 +3781,15 @@ addTwoNumbers([3,2,1], [5,4])
 var findMedianSortedArrays = function(nums1, nums2) {
   const joinAll = nums1.join(",") + "," + nums2.join(",")
   const arr = joinAll.split(",")
-  const sort = arr.sort((a,b) => a-b)
+  const filter = arr.filter((x) => x !== "")
+  console.log(filter)
+  const sort = filter.sort((a,b) => a-b)
   console.log(sort)
+
   //const toNums = sort.map((num) => parseInt(num))
-  if(sort.length %2 == 0){
+  if(sort.length == 1){
+      console.log(parseInt(sort[0]))
+  }else if(sort.length %2 == 0){
       let firstNum = sort.length/2 - 1
       let secondNum = sort.length/2;
       //console.log(parseInt(sort[firstNum]))
@@ -3801,4 +3806,4 @@ var findMedianSortedArrays = function(nums1, nums2) {
 
 };
 
-findMedianSortedArrays([1,3], [2,4,5,6,7])
+findMedianSortedArrays([], [2])
