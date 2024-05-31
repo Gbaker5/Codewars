@@ -3703,6 +3703,15 @@ function order(words){
 
 order("4of Fo1r pe6ople g3ood th5e the2")
 
+
+
+
+////////LEETCODE///////////////////////////LEETCODE//////////////////////LEETCODE////////////
+
+
+
+
+
 //You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 //
 //You may assume the two numbers do not contain any leading zero, except the number 0 itself.
@@ -3750,3 +3759,46 @@ var addTwoNumbers = function(l1,l2){
 
 addTwoNumbers([3,2,1], [5,4])
 
+
+//Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+//
+//The overall run time complexity should be O(log (m+n)).
+//
+// 
+//
+//Example 1:
+//
+//Input: nums1 = [1,3], nums2 = [2]
+//Output: 2.00000
+//Explanation: merged array = [1,2,3] and median is 2.
+//Example 2:
+//
+//Input: nums1 = [1,2], nums2 = [3,4]
+//Output: 2.50000
+//Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+
+
+var findMedianSortedArrays = function(nums1, nums2) {
+  const joinAll = nums1.join(",") + "," + nums2.join(",")
+  const arr = joinAll.split(",")
+  const sort = arr.sort((a,b) => a-b)
+  console.log(sort)
+  //const toNums = sort.map((num) => parseInt(num))
+  if(sort.length %2 == 0){
+      let firstNum = sort.length/2 - 1
+      let secondNum = sort.length/2;
+      //console.log(parseInt(sort[firstNum]))
+      //console.log(parseInt(sort[secondNum]))
+      median = (parseInt(sort[firstNum]) + parseInt(sort[secondNum])) /2
+      console.log(median)
+
+  }else{
+      let middle = sort.length/2 - .5
+      console.log(middle)
+      median = parseInt(sort[middle])
+      console.log(median)
+  }
+
+};
+
+findMedianSortedArrays([1,3], [2,4,5,6,7])
