@@ -3900,3 +3900,71 @@ function largestPairSum (numbers) {
   let sum = order[0] + order[1]
   return sum
   }
+
+
+//  Issue
+//
+//Looks like some hoodlum plumber and his brother has been running around and damaging your stages again.
+//
+//The pipes connecting your level's stages together need to be fixed before you receive any more complaints.
+//
+//The pipes are correct when each pipe after the first is 1 more than the previous one.
+//
+//Task
+//
+//Given a list of unique numbers sorted in ascending order, return a new list so that the values increment by 1 for each index from the minimum value up to the maximum value (both included).
+//
+//Example
+//
+//Input:  1,3,5,6,7,8 Output: 1,2,3,4,5,6,7,8
+
+
+function pipeFix(numbers){
+    
+  let lastdigit = numbers.length - 1;
+  let end = numbers[lastdigit];
+  let start = numbers[0];
+  
+
+  let newArr = [start];
+  let count = start;
+
+  while(count<end){
+  newArr.push(count += 1)
+  }
+
+ return newArr
+}
+
+
+//This is a spin off of my first kata.
+//
+//You are given a string containing a sequence of character sequences separated by commas.
+//
+//Write a function which returns a new string containing the same character sequences except the first and the last ones but this time separated by spaces.
+//
+//If the input string is empty or the removal of the first and last items would cause the resulting string to be empty, return an empty value (represented as a generic value NULL in the examples below).
+//
+//Examples
+//
+//"1,2,3"      =>  "2"
+//"1,2,3,4"    =>  "2 3"
+//"1,2,3,4,5"  =>  "2 3 4"
+//
+//""     =>  NULL
+//"1"    =>  NULL
+//"1,2"  =>  NULL
+
+function array(string) {
+  let arr = string.split(",")
+  arr.pop()
+  if(arr == ""){
+      return null
+  }
+  arr.shift()
+  if(arr == ""){
+      return null
+  }else return arr.join(" ")
+
+  
+}
