@@ -4038,3 +4038,24 @@ function addBinary(a,b) {
   const binary = sum.toString(2)
   return binary
   }
+
+
+//  Write a function named sumDigits which takes a number as input and returns the sum of the absolute value of each of the number's decimal digits.
+//
+//For example: (Input --> Output)
+//
+//10 --> 1
+//99 --> 18
+//-32 --> 5
+
+function sumDigits(number) {
+  const strng = number.toString()
+  
+  let numStrng = strng.match(/[0-9]/g)
+  
+  let nums = numStrng.map((x) => Number(x) )
+  
+  let sum = nums.reduce((acc,c) => acc + c)
+  
+  return sum
+}
