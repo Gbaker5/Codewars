@@ -4094,3 +4094,106 @@ function printerError(s) {
 
 printerError("aaaxbbbbyyhwawiwjjjwwm")
 //printerError("aaabbbbddddhhhh")
+
+
+//Some numbers have funny properties. For example:
+//
+//89 --> 8¹ + 9² = 89 * 1
+//695 --> 6² + 9³ + 5⁴= 1390 = 695 * 2
+//46288 --> 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
+//Given two positive integers n and p, we want to find a positive integer k, if it exists, such that the sum of the digits of n raised to consecutive powers starting from p is equal to k * n.
+//
+//In other words, writing the consecutive digits of n as a, b, c, d ..., is there an integer k such that :
+//
+//(
+//a
+//p
+//+
+//b
+//p
+//+
+//1
+//+
+//c
+//p
+//+
+//2
+//+
+//d
+//p
+//+
+//3
+//+
+//.
+//.
+//.
+//)
+//=
+//n
+//∗
+//k
+//(a 
+//p
+// +b 
+//p+1
+// +c 
+//p+2
+// +d 
+//p+3
+// +...)=n∗k
+//If it is the case we will return k, if not return -1.
+//
+//Note: n and p will always be strictly positive integers.
+//
+//Examples:
+//
+//n = 89; p = 1 ---> 1 since 8¹ + 9² = 89 = 89 * 1
+//
+//n = 92; p = 1 ---> -1 since there is no k such that 9¹ + 2² equals 92 * k
+//
+//n = 695; p = 2 ---> 2 since 6² + 9³ + 5⁴= 1390 = 695 * 2
+//
+//n = 46288; p = 3 ---> 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
+
+
+function digPow(n, p){
+  //turn num to string array
+  const arr = n.toString().split("")
+  cl(arr)
+  //turn string array to nums array
+  const nums = arr.map((x) => Number(x))
+  cl(nums)
+
+  //create array of exponents stating at "p"
+  powers = [p]
+  //3,4,5,6,7
+  
+  for(i=1;i<nums.length;i++){
+      powers.push(p+=1)
+  }
+  cl(powers)
+
+  //use array of NUMS to pair with array of EXPONENTS in a new array
+  powered = []
+  // 4^3 (64), 6^4(1296), 2^5(32), 8^6(262144), 8^7(2097152)
+  for(j=0;j<powers.length;j++){
+      powered.push( Math.pow(nums[j],powers[j]))
+  }
+  cl(powered)
+
+  //sum of new array 
+ sum = powered.reduce((acc,c) => acc + c)
+ cl(sum)
+
+ //does the sum equal k * n
+ k = sum / n 
+ cl(k)
+
+ if(Number.isInteger(k) == true){
+  console.log(k)
+ }else console.log(-1)
+
+  
+}
+
+digPow(46288, 3)
