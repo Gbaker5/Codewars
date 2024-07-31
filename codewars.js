@@ -4223,3 +4223,39 @@ function addLength(str) {
   
 
   addLength("apple ban")
+
+
+//  Write a function that returns the count of characters that have to be removed in order to get a string with no consecutive repeats.
+//
+//Note: This includes any characters
+//
+//Examples
+//
+//'abbbbc'  => 'abc'    #  answer: 3
+//'abbcca'  => 'abca'   #  answer: 2
+//'ab cca'  => 'ab ca'  #  answer: 1
+
+function countRepeats(str) {
+  // code solution
+  
+  const arr = str.split("")
+  const noSpaces = arr.filter((x)=> x !== " ")
+  cl(noSpaces)
+  oglength = noSpaces.length
+  cl(oglength)
+  
+  const noConsecutiveRepeats = [];
+  
+  // Iterate through the array and add characters to the result if they are not the same as the previous one
+  for (let i = 0; i < noSpaces.length; i++) {
+      if (i === 0 || noSpaces[i] !== noSpaces[i - 1]) {
+          noConsecutiveRepeats.push(noSpaces[i]);
+      }
+  }
+  cl(noConsecutiveRepeats)
+  const newLength = noConsecutiveRepeats.length
+  cl(newLength)
+  cl(oglength-newLength)
+}
+
+countRepeats("AaBBCCC")
