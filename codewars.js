@@ -4350,3 +4350,111 @@ function getSum(a, b){
  }
 
 }
+
+//Count the number of Duplicates
+//
+//Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+//
+//Example
+//
+//"abcde" -> 0  # no characters repeats more than once
+//"aabbcde" -> 2  # 'a' and 'b'
+//"aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+//"indivisibility" -> 1  # 'i' occurs six times
+//"Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+//"aA11" -> 2  # 'a' and '1'
+//"ABBA" -> 2  # 'A' and 'B' each occur twice
+
+
+function duplicateCount(text) {
+  // Convert the text to lowercase
+  text = text.toLowerCase();
+  
+  // Convert the string to an array
+  let arr = text.split("");
+  
+  // Object to store letter counts
+  let letterCount = {};
+  
+  // Loop through each letter in the array
+  for (let letter of arr) {
+      // If the letter already exists in the object, increment its count
+      if (letterCount[letter]) {
+          letterCount[letter]++;
+      } else {
+          // If the letter does not exist in the object, set its count to 1
+          letterCount[letter] = 1;
+      }
+  }
+  
+  // Find the letters that occur more than once
+  let duplicates = 0;
+  for (let letter in letterCount) {
+      if (letterCount[letter] > 1) {
+          duplicates++;
+      }
+  }
+  
+  // Return the number of duplicates
+  return duplicates;
+}
+
+// Testing the function
+console.log(duplicateCount("indivisibility")); // Output: 1
+console.log(duplicateCount("aabBcde")); // Output: 2
+
+
+//Take an integer n (n >= 0) and a digit d (0 <= d <= 9) as an integer.
+//
+//Square all numbers k (0 <= k <= n) between 0 and n.
+//
+//Count the numbers of digits d used in the writing of all the k**2.
+//
+//Implement the function taking n and d as parameters and returning this count.
+//
+//Examples:
+//
+//n = 10, d = 1 
+//the k*k are 0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100
+//We are using the digit 1 in: 1, 16, 81, 100. The total count is then 4.
+//
+//The function, when given n = 25 and d = 1 as argument, should return 11 since
+//the k*k that contain the digit 1 are:
+//1, 16, 81, 100, 121, 144, 169, 196, 361, 441.
+//So there are 11 digits 1 for the squares of numbers between 0 and 25.
+//Note that 121 has twice the digit 1.
+
+function nbDig(n, d) {
+    
+
+  //n will be an integer between 0 and the number provided
+  //d will be a number between 0 and 9. 
+  
+  //loop though the numbers in n which will be an array of numbers
+   // square each number in that array
+  //if the number in the squared array contains the d variable then push that number into a new array
+  //join the array together and add 1 to a counter variable each time the number occurs
+
+  let zeroToN = [];
+  for(i=0;i<=n;i++){
+      zeroToN.push(i*i)
+  }
+  //cl(zeroToN)
+  let joined = zeroToN.join("").split("")
+  //cl(joined)
+
+  let checkTheD = 0;
+  for(j=0;j<joined.length;j++){
+      if(joined[j] == d.toString()){
+          checkTheD+=1
+      }else{
+          checkTheD+=0
+      }
+  }
+  
+  
+  return checkTheD
+ 
+
+}
+
