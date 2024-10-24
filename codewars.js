@@ -4659,3 +4659,49 @@ function position(letter){
 position("a")
 position("z")
 position("e")
+
+//Write a function that will check if two given characters are the same case.
+//
+//If either of the characters is not a letter, return -1
+//If both characters are the same case, return 1
+//If both characters are letters, but not the same case, return 0
+//Examples
+//
+//'a' and 'g' returns 1
+//
+//'A' and 'C' returns 1
+//
+//'b' and 'G' returns 0
+//
+//'B' and 'g' returns 0
+//
+//'0' and '?' returns -1
+
+function sameCase(a, b){
+  //lowercase is 97-122
+  //uppercase is 65-90
+
+
+ a = a.charCodeAt(0) >=97 && a.charCodeAt(0) <=122 ? 'lower' 
+  :a.charCodeAt(0) >=65 && a.charCodeAt(0) <=90 ? 'upper'
+  :"nal";
+ cl(a)
+
+ b = b.charCodeAt(0) >=97 && b.charCodeAt(0) <=122 ? 'lower' 
+  : b.charCodeAt(0) >=65 && b.charCodeAt(0) <=90 ? 'upper'
+  :"nal";
+ cl(b)
+
+ return a == 'lower' && b == 'lower' ? 1
+ : a == 'upper' && b =='upper' ?  1
+ : a == 'lower' && b == 'upper' ? 0
+ : a == 'upper' && b == 'lower' ? 0
+ : -1
+ 
+}
+
+sameCase('a','g') //[97,103]
+//sameCase('A','C') //[65,67]
+//sameCase('b','G') //[98,47]
+//sameCase('B','g') //[66,103]
+//sameCase('0','?') //[48,63]
