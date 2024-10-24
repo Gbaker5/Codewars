@@ -4579,3 +4579,65 @@ function dutyFree(normPrice, discount, hol){
   const saved = (discount * normPrice) /100
       return Math.floor(hol/saved)
   }
+
+
+//  Given a string of words, you need to find the highest scoring word.
+//
+//Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+//
+//For example, the score of abad is 8 (1 + 2 + 1 + 4).
+//
+//You need to return the highest scoring word as a string.
+//
+//If two words score the same, return the word that appears earliest in the original string.
+//
+//All letters will be lowercase and all inputs will be valid.
+
+
+function high(x){
+  const alphabet = [0,"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+  //cl(alphabet)
+
+  const words = x.split(" ")
+  //cl(words)
+
+  let sums = [];
+
+  words.forEach((word) => {
+      const nums = [];
+      //word = {word: 0};
+      wordArr = word.split("")
+      //cl(wordArr)
+      for(i=0;i<wordArr.length;i++){
+          for(j=0;j<alphabet.length;j++){
+              //cl(wordArr[i],alphabet[j])
+              if(wordArr[i] == alphabet[j]){
+                  nums.push(j)
+                  
+              }
+          }
+      }
+      let sum = nums.reduce((acc,c) => acc + c)
+      sums.push(sum)
+      //cl(nums)
+      //cl(sum)
+  
+  })
+  cl(words)
+  cl(sums)
+
+  
+
+let highestIndex = sums.reduce((highestIndex, current, index, array) => {
+return current > array[highestIndex] ? index : highestIndex;
+}, 0);
+
+// Now, highestIndex is stored in a variable and can be used later
+console.log(highestIndex); // Output: 1
+
+console.log(words[highestIndex])
+  
+
+}
+
+high('bab bbb ccc') //[2,1,2] [2,2,2] [3,3,3] => [5] [6] [9]
