@@ -4756,3 +4756,40 @@ vowelIndices("mmm")
 vowelIndices("super")
 //vowelIndices("apple")
 vowelIndices("YoMama")
+
+//Your task is simply to count the total number of lowercase letters in a string.
+//
+//Examples
+//
+//"abc" ===> 3
+//
+//"abcABC123" ===> 3
+//
+//"abcABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~" ===> 3
+//
+//"" ===> 0;
+//
+//"ABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~" ===> 0
+//
+//"abcdefghijklmnopqrstuvwxyz" ===> 26
+
+function lowercaseCount(str){
+  //use regex to find lower case letter in a string
+  //count the number of lower case letters
+  //return number
+
+  
+  //filter letters using regex match
+  //count length of string/arr
+  
+  lowerC = str.match(/[a-z]/g)
+  
+  return lowerC == null ? 0
+  :lowerC.length
+
+  
+
+
+}
+
+lowercaseCount("abcABC123")
