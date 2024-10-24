@@ -4705,3 +4705,54 @@ sameCase('a','g') //[97,103]
 //sameCase('b','G') //[98,47]
 //sameCase('B','g') //[66,103]
 //sameCase('0','?') //[48,63]
+
+
+//We want to know the index of the vowels in a given word, for example, there are two vowels in the word super (the second and fourth letters).
+//
+//So given a string "super", we should return a list of [2, 4].
+//
+//Some examples:
+//Mmmm  => []
+//Super => [2,4]
+//Apple => [1,5]
+//YoMama -> [1,2,4,6]
+//NOTES
+//
+//Vowels in this context refers to: a e i o u y (including upper case)
+//This is indexed from [1..n] (not zero indexed!)
+
+
+function vowelIndices(word){
+  //your code here
+  //finding vowels in a given string
+  //return the indices of the vowels within the string
+  //should return vowels in an array 
+  //indices should be in order of how they appear
+  //a,e,i,o,u sometimes y?
+  //case sensitive?
+  // indexed from 1 not zero!!!
+  //if no vowels return empty array
+  // a= 97,e= 101, i=105 , o=111 , u= 117, y=121
+  
+
+  //turn string to lowercase
+  //word needs to stay a string because charCodeAt only works on strings
+  const lower = word.toLowerCase()
+  cl(lower)
+  //inititate empty array to hold indices
+  let indices = [];
+  //for loop to iterate through letters
+   //conditional to check whether it is a vowel and return index + 1 if it is
+ for(i=0;i<lower.length;i++){
+     if(lower.charCodeAt(i) == 97 || lower.charCodeAt(i) == 101 ||lower.charCodeAt(i) == 105 ||lower.charCodeAt(i) == 111 ||lower.charCodeAt(i) == 117 ||lower.charCodeAt(i) == 121 ){
+         indices.push(i+1)
+     }
+ }
+ cl(indices)
+
+}
+
+vowelIndices("mmm")
+vowelIndices("super")
+//vowelIndices("apple")
+vowelIndices("YoMama")
