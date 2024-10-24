@@ -4641,3 +4641,21 @@ console.log(words[highestIndex])
 }
 
 high('bab bbb ccc') //[2,1,2] [2,2,2] [3,3,3] => [5] [6] [9]
+
+
+//When provided with a letter, return its position in the alphabet.
+//
+//Input :: "a"
+//
+//Output :: "Position of alphabet: 1"
+//
+//Note: Only lowercased English letters are tested
+
+function position(letter){
+  const charCode = letter.charCodeAt(0) - 96; // 'a' is 97 in ASCII, so subtract 96 to get 'a' as 1
+  cl(charCode)
+}
+
+position("a")
+position("z")
+position("e")
