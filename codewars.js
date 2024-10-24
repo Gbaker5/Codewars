@@ -4653,7 +4653,7 @@ high('bab bbb ccc') //[2,1,2] [2,2,2] [3,3,3] => [5] [6] [9]
 
 function position(letter){
   const charCode = letter.charCodeAt(0) - 96; // 'a' is 97 in ASCII, so subtract 96 to get 'a' as 1
-  cl(charCode)
+  cl(`Position of alphabet: ${charCode}`)
 }
 
 position("a")
