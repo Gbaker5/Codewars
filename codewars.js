@@ -4897,3 +4897,46 @@ console.log("Final Result:", thirt(1234567));
 function remove (string) {
   return string.split("").filter((x) => x !== "!").join("") + "!"  
   }
+
+  //Given a lowercase string that has alphabetic characters only and no spaces, return the highest value of consonant substrings. Consonants are any letters of the alphabet except "aeiou".
+//
+//We shall assign the following values: a = 1, b = 2, c = 3, .... z = 26.
+//
+//For example, for the word "zodiacs", let's cross out the vowels. We get: "z o d ia c"
+//
+//"zodiac" -> 26
+//The consonant substrings are: "z", "d" and "c" with values "z" = 26, "d" = 4 and "c" = 3. The highest is 26.
+//
+//"strength" -> 57
+//The consonant substrings are: "str" and "ngth" with values "str" = 19 + 20 + 18 = 57 and "ngth" = 14 + 7 + 20 + 8 = 49. The highest is 57.
+
+
+  function solve(s) {
+    const vowels = /[aeiou]/g
+    let noV = s.replace(vowels, " ")
+    //cl(noV)
+    let substrings = noV.split(" ")
+    //cl(subs)
+  
+    const alphabetMap = new Map();
+  
+    for (let i = 0; i < 26; i++) {
+      const letter = String.fromCharCode(97 + i); // 'a', 'b', 'c', ...
+      alphabetMap.set(letter, i + 1);
+    }
+    
+    let maxSum = 0;
+    
+    substrings.forEach((substring) => {
+      const letters = substring.split(""); // Split substring into individual letters
+      const sum = letters.reduce((acc, letter) => acc + (alphabetMap.get(letter) || 0), 0); // Sum the values
+      maxSum = Math.max(maxSum, sum); // Update maxSum if current sum is greater
+    });
+  
+    return maxSum; // Return the maximum sum
+  
+    
+  };
+  
+  //solve("zodiac")
+  //solve("strength") 
