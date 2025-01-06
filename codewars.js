@@ -4963,3 +4963,24 @@ function otherAngle(a, b) {
 }
 
 otherAngle(30,60)
+
+//Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+//
+//Examples
+//
+//"This is an example!" ==> "sihT si na !elpmaxe"
+//"double  spaces"      ==> "elbuod  secaps"
+
+function reverseWords(str) {
+  let arr = str.split(" ")
+  cl(arr)
+  let reversed = []
+  for(i=0;i<arr.length;i++){
+    reversed.push(arr[i].split("").reverse().join(""))
+  }
+  cl(reversed.join(" "))
+}
+
+reverseWords("This is an example!")
+reverseWords("  double  spaced  words  ")
+reverseWords("a b c d")
