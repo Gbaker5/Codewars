@@ -5125,3 +5125,35 @@ function getDivisorsCnt(n) {
   }
   return count
 }
+
+
+//Simple, given a string of words, return the length of the shortest word(s).
+//
+//String will never be empty and you do not need to account for different data types.
+
+function findShort(s){
+  let smallest = Infinity
+  const arr = s.split(" ")
+  
+    arr.forEach(element => {
+      if(element.length < smallest)
+     smallest = element.length
+    });
+    return smallest
+  }
+
+
+  function multiplicationTable(size) {
+    let arr = [];
+    
+    for(i=1;i<=size;i++){
+        let multi = []
+      for(j=1;j<=size;j++){
+        multi.push((i*j))
+      }
+      arr.push(multi)
+      cl(arr)
+    }
+  
+  }
+  
