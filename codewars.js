@@ -5191,3 +5191,40 @@ function cookie(x){
 //cl(cookie(5))
 //cl(cookie("hey"))
 //cl(cookie(true))
+
+
+//You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+//
+//Complete the method which accepts such an array, and returns that single different number.
+//
+//The input array will always be valid! (odd-length >= 3)
+//
+//Examples
+//
+//[1, 1, 2] ==> 2
+//[17, 17, 3, 17, 17, 17, 17] ==> 3
+
+function stray(numbers) {
+  cl(numbers)
+ let hashmap = {}; //create empty object
+ for(let arr of numbers){ //loop through and create key and values
+  if(hashmap[arr] === undefined){ //if there is nothing assigned to key in object... 
+    hashmap[arr] = 1 //assign number 1
+  }else {
+    hashmap[arr] += 1 //if the key already ixists add another 1
+  }
+ }
+
+ cl(hashmap)
+ for(let key in hashmap){ //loop through keys
+  if(hashmap[key] === 1){ //if key value = 1 then return key
+    cl(key)
+    
+  }
+ }
+
+ 
+}
+
+stray([17, 17, 3, 17, 17, 17, 17])
+stray([1,1,2])
