@@ -5247,3 +5247,49 @@ function shortenToDate(longDate) {
 // Don Drumphet lives in a nice neighborhood, but one of his neighbors has started to let his house go. Don Drumphet wants to build a wall between his house and his neighbor’s, and is trying to get the neighborhood association to pay for it. He begins to solicit his neighbors to petition to get the association to build the wall. Unfortunately for Don Drumphet, he cannot read very well, has a very limited attention span, and can only remember two letters from each of his neighbors’ names. As he collects signatures, he insists that his neighbors keep truncating their names until two letters remain, and he can finally read them.
 //
 //Your code will show Full name of the neighbor and the truncated version of the name as an array. If the number of the characters in name is less than or equal to two, it will return an array containing only the name as is.
+
+function whoIsPaying(name){
+  let trunc = ''
+  if(name.length <= 2){
+    trunc = name
+    cl([trunc])
+  }else{
+  const fl = name.split("")[0];
+  const sl = name.split("")[1];
+  trunc =  `${fl}${sl}`
+  cl([name, trunc])
+  }
+}
+
+whoIsPaying("Mexico")
+whoIsPaying("I")
+
+//This function should test if the factor is a factor of base.
+//
+//Return true if it is a factor or false if it is not.
+//
+//About factors
+//
+//Factors are numbers you can multiply together to get another number.
+//
+//2 and 3 are factors of 6 because: 2 * 3 = 6
+//
+//You can find a factor by dividing numbers. If the remainder is 0 then the number is a factor.
+//You can use the mod operator (%) in most languages to check for a remainder
+//For example 2 is not a factor of 7 because: 7 % 2 = 1
+//
+//Note: base is a non-negative number, factor is a positive number.
+
+function checkForFactor (base, factor) {
+  //cl(base%factor)
+  return base%factor === 0 ? cl(true) : cl(false)
+}
+checkForFactor(10,2)
+checkForFactor(63,7)
+checkForFactor(2450,5)
+checkForFactor(24612,3)
+
+checkForFactor(9,2)
+checkForFactor(653,7)
+checkForFactor(2453,5)
+checkForFactor(24617,3)
