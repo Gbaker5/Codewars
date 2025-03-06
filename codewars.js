@@ -5334,3 +5334,40 @@ function calculator(a,b,sign){
   calculator(1,2,"-")
   calculator(6,2,"$")
   calculator(6,"h","*")
+
+//  Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. Index 0 will be considered even.
+//
+//For example, capitalize("abcdef") = ['AbCdEf', 'aBcDeF']. See test cases for more examples.
+//
+//The input will be a lowercase string with no spaces.
+//
+//Good luck!
+//
+//If you like this Kata, please try:
+//
+//Indexed capitalization
+//
+//Even-odd disparity
+
+function capitalize(s){
+  const arr = s.split("")
+  let evens = [];
+  let odds = [];
+  for(let i=0;i<arr.length;i++){
+    //cl(i%2)
+    if(i%2 == 0){
+      evens.push(arr[i].toUpperCase())
+      odds.push(arr[i].toLowerCase())
+    }else{
+      evens.push(arr[i].toLowerCase())
+      odds.push(arr[i].toUpperCase())
+    } 
+    
+  }
+ //cl(evens)
+ //cl(odds)
+ cl([evens.join(""), odds.join("")])
+};
+
+//capitalize("abcdef")
+capitalize("abracadabra")
