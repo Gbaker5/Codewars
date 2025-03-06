@@ -5308,3 +5308,29 @@ checkForFactor(24617,3)
 //calculator(1,2,"&"); //=> result will be "unknown value"
 //calculator(1,"k","*"); //=> result will be "unknown value"
 //Good luck!
+
+function calculator(a,b,sign){
+  
+
+  if(typeof a !== "number" || typeof b !== "number" || !["+", "-", "/", "*"].includes(sign)) {
+    cl("unkwnown value")
+  }else {
+    switch(sign){
+      case "+": cl(a+b);
+      break;
+      case "-": cl(a-b);
+      break;
+      case "/": cl(a/b);
+      break;
+      case "*": cl(a*b);
+      break;
+      default: cl("huh?")
+    }
+  }
+  
+  }
+  
+  calculator(1,2,"+")
+  calculator(1,2,"-")
+  calculator(6,2,"$")
+  calculator(6,"h","*")
