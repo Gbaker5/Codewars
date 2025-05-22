@@ -5445,3 +5445,59 @@ function sortGiftCode(code){
   let sorted = String.fromCharCode(...charCodes)
   cl(sorted)
 }
+
+
+//Problem
+//
+//Determine whether a non-negative integer number is colorful or not.
+//
+//263 is a colorful number because [2, 6, 3, 2*6, 6*3, 2*6*3] are all different; whereas
+//236 is not colorful, because [2, 3, 6, 2*3, 3*6, 2*3*6] has 6 twice.
+//
+//So take all consecutive subsets of digits, take their products, and ensure all the products are different.
+//
+//Examples
+//
+//263  -->  true
+//236  -->  false
+
+function colourful(number) {
+  const arr = Array.from(String(number), Number)
+  //cl(arr) 
+  
+
+ let reduced 
+ let allNums
+
+ if(arr.length == 1){
+  return true
+ }else if(arr.length == 2){
+  reduced = arr.reduce((acc,c) => acc * c)
+  allNums = arr.concat(reduced)
+  //cl(allNums)
+  
+ }else if(arr.length>2){
+    reduced = arr.reduce((acc,c) => acc * c)
+    //cl(reduced)
+    
+    consecutiveSets = [];
+    for(i=0;i<arr.length-1;i++){
+     consecutiveSets.push(arr[i] * arr[i+1])
+    }
+    //cl(consecutiveSets)
+    allNums = arr.concat(consecutiveSets).concat(reduced)
+    //cl(allNums)
+  }
+
+const unique = allNums.filter((item, index) => allNums.indexOf(item) == index)
+//cl(unique)
+
+if(allNums.join() == unique.join() ){
+  return true
+}else return false
+
+
+  
+}
+
+console.log(colourful(23))
