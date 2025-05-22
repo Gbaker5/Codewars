@@ -5501,3 +5501,56 @@ if(allNums.join() == unique.join() ){
 }
 
 console.log(colourful(23))
+
+
+//Step 1: Create a function called encode() to replace all the lowercase vowels in a given string with numbers according to the following pattern:
+//
+//a -> 1
+//e -> 2
+//i -> 3
+//o -> 4
+//u -> 5
+//For example, encode("hello") would return "h2ll4". There is no need to worry about uppercase vowels in this kata.
+//
+//Step 2: Now create a function called decode() to turn the numbers back into vowels according to the same pattern shown above.
+//
+//For example, decode("h3 th2r2") would return "hi there".
+//
+//For the sake of simplicity, you can assume that any numbers passed into the function will correspond to vowels.
+
+function encode(string) {
+  const arr = string.split("")
+  cl(arr)
+  let encoded = []
+  for(i=0;i<arr.length;i++){
+    arr[i] == "a" ? encoded.push("1") :
+    arr[i] == "e" ? encoded.push("2") :
+    arr[i] == "i" ? encoded.push("3") :
+    arr[i] == "o" ? encoded.push("4") :
+    arr[i] == "u" ? encoded.push("5") :
+    encoded.push(arr[i])
+  }
+
+  console.log(encoded.join(""))
+  
+}
+
+function decode(string) {
+  const arr = string.split("")
+  cl(arr)
+  let decoded = []
+  for(i=0;i<arr.length;i++){
+    arr[i] == "1" ? decoded.push("a") :
+    arr[i] == "2" ? decoded.push("e") :
+    arr[i] == "3" ? decoded.push("i") :
+    arr[i] == "4" ? decoded.push("o") :
+    arr[i] == "5" ? decoded.push("u") :
+    decoded.push(arr[i])
+  }
+
+  console.log(decoded.join(""))
+  
+}
+
+encode("hello")
+decode("h2ll4")
