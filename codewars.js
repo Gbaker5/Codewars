@@ -5586,3 +5586,70 @@ function mineLocation(field){
   
     
 }
+
+//The input is a string str of digits. Cut the string into chunks (a chunk here is a substring of the initial string) of size sz (ignore the last chunk if its size is less than sz).
+//
+//If the sum of a chunk's digits is divisible by 2, reverse that chunk; otherwise rotate it to the left by one position. Put together these modified chunks and return the result as a string.
+//
+//If
+//
+//sz is <= 0 or if str == "" return ""
+//sz is greater (>) than the length of str it is impossible to take a chunk of size sz hence return "".
+//Examples:
+//
+//("123456987654", 6) --> "234561876549"
+//("123456987653", 6) --> "234561356789"
+//("66443875", 4) --> "44668753"
+//("66443875", 8) --> "64438756"
+//("664438769", 8) --> "67834466"
+//("123456779", 8) --> "23456771"
+//("", 8) --> ""
+//("123456779", 0) --> "" 
+//("563000655734469485", 4) --> "0365065073456944"
+//Example of a string rotated to the left by one position:
+//s = "123456" gives "234561".
+
+function revrot(str, sz) {
+    // your code
+    function add(arr){
+      const newAr = arr.join("").split("").map(x => Number(x))
+      let sum = newAr.reduce((acc,c) => acc+c)
+      return sum 
+    }
+
+     function rotate(arr){
+      const newArr = arr.join("").split("")
+      const front = newArr.slice(1)
+      const back = newArr[0]
+      let rotated = front.concat(back)
+      return rotated
+  
+    }
+
+    if(sz <= 0 || str == "" || sz > str.length){
+      return ""
+    }
+
+    const result = [];
+    const strArr = str.split("")
+    for(let i=0; i<strArr.length; i += sz){
+      if(strArr.slice(i, i + sz).length == sz){
+        if(add(strArr.slice(i, i + sz)) %2== 0){
+            result.push(strArr.slice(i, i + sz).reverse().join(""))
+        }else{
+            result.push(rotate(strArr.slice(i, i + sz)))
+        }
+       
+      }
+
+      
+    }
+    console.log(result.flat().join(""))
+}
+
+revrot("1234569876545", 6)
+
+
+
+
+
