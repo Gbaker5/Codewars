@@ -5722,3 +5722,34 @@ function mergeArrays(arr1, arr2) {
 }
 
 cl(mergeArrays([1,3,5,7,9], [10,8,6,4,2]))
+
+//Each crew member adds 1.5 units to the ship draft. If after removing the weight of the crew, the draft is still more than 20, then the ship is worth looting. Any ship weighing that much must have a lot of booty!
+//
+//Add the method
+//
+//isWorthIt
+//to decide if the ship is worthy to loot. For example:
+//
+//titanic.isWorthIt() // return false
+//Good luck and may you find GOOOLD!
+
+class Ship {
+  constructor(draft, crew) {
+    this.draft = draft
+    this.crew = crew
+  }
+  
+  //YOUR CODE HERE...
+  isWorthIt(){
+    const crewWgt = this.crew * 1.5
+   
+    const booty = this.draft - crewWgt
+    if(booty > 20){
+      return true
+    }else return false
+  }
+}
+
+const titanic = new Ship(100,20).isWorthIt()
+
+
