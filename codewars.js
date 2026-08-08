@@ -6447,3 +6447,86 @@ function maxDiff(list) {
 };
 
 console.log(maxDiff([1, 2, 3, -4]))
+
+//1, 246, 2, 123, 3, 82, 6, 41 are the divisors of number 246.
+//
+//Squaring these divisors we get: 1, 60516, 4, 15129, 9, 6724, 36, 1681.
+//
+//The sum of these squares is 84100 which is 290 * 290.
+//
+//Task
+//
+//Find all integers between m and n (m and n are integers with 1 <= m <= n) such that the sum of their squared divisors is itself a square.
+//
+//We will return an array of subarrays or of tuples (in C an array of Pair) or a string.
+//
+//The subarrays (or tuples or Pairs) will have two elements: first the number the squared divisors of which is a square and then the sum of the squared divisors.
+//
+//Example:
+//
+//m =  1, n = 250 --> [[1, 1], [42, 2500], [246, 84100]]
+//m = 42, n = 250 --> [[42, 2500], [246, 84100]]
+//The form of the examples may change according to the language, see "Sample Tests".
+//
+//Note
+//
+//In Fortran - as in any other language - the returned string is not permitted to contain any redundant trailing whitespace: you can use dynamically allocated character strings.
+
+function listSquared(m, n) {
+    // your code
+    //the two variables given are a range (ex 1-250)
+    //for each number between that range, we will perform an operation
+    //make a list of the divisors of that number
+    //then square the divisor in a separate list 
+    //check if the sum of those squared divisors is a square itself 
+    //we will return an array of subarrays
+
+
+    //for loop (could be while loop) to increase m by 1 and n is the limit of i
+    //perform a function on each i
+
+    //function check divisors 
+    //makes duplicate list of squared divisors
+    //gets sum of divisors
+    //check if sum is a square
+    //if yes, place [i and sum] in an array
+
+    let integerPairs = [];
+    const result = {};
+
+    for(let i=m; i<=n; i++){
+      //console.log(i) //iterating through range of numbers
+      result[i] = [];
+      for(let j=1;j<=i;j++){ //iterates through divisors
+
+        //console.log(j)
+        if(i%j == 0){
+          result[i].push(j)
+          //console.log(result)
+        }
+
+
+      }
+     
+    }
+
+    function findSum(arr){
+      let square = arr.map((x) => Math.pow(x,2)) //square divisors
+      let sum = square.reduce((acc,c) => acc + c) //find sum
+      const root = Math.sqrt(sum) //find sqr root
+      return [sum,root] //return sum and square root
+    }
+
+    //console.log(findSum([1,2,3])[])
+    
+    for(let key in result){  //cycle through divisors
+      //console.log(findSum(result[key])[1])
+      if(findSum(result[key])[1] == Math.trunc(findSum(result[key])[1]))  { 
+        //console.log([Number(key),Math.trunc(findSum(result[key])[0])])
+        integerPairs.push([Number(key),Math.trunc(findSum(result[key])[0])])
+      }
+    }
+    return integerPairs
+}
+
+console.log(listSquared(1,250))
